@@ -1,0 +1,28 @@
+/* Header Styling */
+header {
+  background-color: #F28C28;
+  background-image: url("/images/light-paper-fibers.png");
+  background-size: cover; /* Make the background image cover the entire header */
+  background-position: center; /* Center the background image */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 250px; /* Adjust height as necessary */
+  text-align: center; /* Center text */
+  color: #FFFFFF; /* Text color */
+}
+
+/* Avatar and background image */
+header img:first-of-type {
+  width: 150px; /* Set size of the avatar */
+  height: 150px; /* Set size of the avatar */
+  object-fit: cover; /* Ensures the image is cropped correctly */
+}
+
+/* Name below the avatar */
+header h2 {
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 24px;
+}
