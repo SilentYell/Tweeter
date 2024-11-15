@@ -29,6 +29,6 @@ body {
  main {
   width: 90%;
   margin: 20px auto;
-  background-color: #F4F1EC;
+  background-color: inherit;
   padding: 20px;
  }
