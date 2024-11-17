@@ -33,6 +33,25 @@ textarea::placeholder {
   font-family: Bungee, sans-serif;
 }
 
+form button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+form output {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+form button:hover {
+  background-color: #F28C28;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
 .new-tweet .counter {
   float: right;
   font-size: 16px;
