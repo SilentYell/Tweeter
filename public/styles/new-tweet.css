@@ -51,9 +51,12 @@ form button:hover {
   transition: background-color 0.3s ease;
 }
 
-
 .new-tweet .counter {
   float: right;
   font-size: 16px;
   font-family: Bungee, sans-serif;
+}
+
+.counter.invalid {
+  color: red;
 }
