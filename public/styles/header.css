@@ -2,12 +2,12 @@
 header {
   background-color: #F28C28;
   background-image: url("/images/light-paper-fibers.png");
-  background-size: cover; /* Make the background image cover the entire header */
-  background-position: center; /* Center the background image */
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  align-items: center;
+  justify-content: center;
   height: 400px;
   text-align: center;
   color: #FFFFFF; /* Text color */
@@ -24,5 +24,5 @@ header img:first-of-type {
 header h2 {
   margin-top: 40px;
   font-family: "Source Sans 3", sans-serif;
-  font-size: 35px;
+  font-weight: 600;
 }

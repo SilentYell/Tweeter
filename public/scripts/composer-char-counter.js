@@ -8,9 +8,9 @@ $(document).ready(function() {
 
     // Turn counter red if characters exceed the limit
     if (charsLeft < 0) {
-      counter.addClass("invalid");
+      counter.addClass("counter-red");
     } else {
-      counter.removeClass("invalid");
+      counter.removeClass("counter-red");
     }
   });
 });
