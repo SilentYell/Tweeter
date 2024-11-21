@@ -1,5 +1,5 @@
 /* Header Styling */
-header {
+.page-header {
   background-color: #F28C28;
   background-image: url("/images/light-paper-fibers.png");
   background-size: cover;
@@ -14,14 +14,14 @@ header {
 }
 
 /* Avatar and background image */
-header img:first-of-type {
+.page-header img:first-of-type {
   width: 250px; /* Set size of the avatar */
   height: 250px; /* Set size of the avatar */
   object-fit: cover; /* Ensures the image is cropped correctly */
 }
 
 /* Name below the avatar */
-header h2 {
+.page-header h2 {
   margin-top: 40px;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
