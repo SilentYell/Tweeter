@@ -7,6 +7,7 @@
 
 // Wait until the DOM is fully loaded
 $(document).ready(function() {
+  // Function to handle tweet form submission
   $('form').on('submit', function(event) {
     // Prevent the default form submission behavior
     event.preventDefault();
@@ -24,6 +25,7 @@ $(document).ready(function() {
         console.log('Error submitting tweet.');
       });
   });
+
   // Function to create a tweet element using a template literal
   const createTweetElement = function(tweet) {
     const $tweet = $(`
@@ -65,32 +67,21 @@ $(document).ready(function() {
     }
   };
 
-  // Sample tweet data
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
+  // Function to fetch and load tweets from the server
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: (tweets) => {
+        renderTweets(tweets); // Render fetched tweets
       },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
+      error: (err) => {
+        console.error('Failed to fetch tweets:', err);
       },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+    });
+  };
 
-  // Render the sample tweet data
-  renderTweets(data);
+  // Load tweets on page load
+  loadTweets();
 });
