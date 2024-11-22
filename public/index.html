@@ -63,28 +63,10 @@
       </section>
       <!-- Tweet feed of all recent tweets -->
       <section class="tweet-feed">
-        <article class="tweet">
-          <header>
-            <div class="avatar">
-              <img src="/images/New Nikilobe Logo N.png" alt="User Avatar">
-            </div>
-            <div class="user-info">
-              <h3>Newton</h3>
-              <p>@SirIsaac</p>
-            </div>
-          </header>
-          <div class="tweet-body">
-            <p>If I have seen further it is by standing on the shoulders of giants</p>
-          </div>
-          <footer>
-            <div class="time-ago">10 days ago</div>
-            <div class="tweet-actions">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+        <!-- Container for dynamically loaded tweets -->
+        <div id="tweets-container">
+          <!-- Tweets will be appended here by JavaScript -->
+        </div>
       </section>
     </main>
     <script src="/scripts/composer-char-counter.js"></script>

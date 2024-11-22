@@ -14,22 +14,17 @@ $(document).ready(function() {
       <article class="tweet">
         <header>
           <div class="avatar">
-            <!-- Display user's avatar image -->
             <img src="${tweet.user.avatars}" alt="${tweet.user.name}'s avatar">
           </div>
           <div class="user-info">
-            <!-- Display user's name and handle -->
             <h3>${tweet.user.name}</h3>
             <p>${tweet.user.handle}</p>
           </div>
         </header>
-        <!-- Display tweet content -->
         <p class="tweet-content">${tweet.content.text}</p>
         <footer>
-          <!-- Display time ago formatted timestamp of tweet creation -->
           <div class="time-ago">${timeago.format(tweet.created_at)}</div>
           <div class="tweet-actions">
-            <!-- Action icons for flagging, retweeting, and liking the tweet -->
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
             <i class="fa-solid fa-heart"></i>
