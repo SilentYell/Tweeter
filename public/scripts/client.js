@@ -44,8 +44,8 @@ $(document).ready(function() {
     for (const tweet of tweets) {
       // Create a tweet element for the current tweet
       const $tweet = createTweetElement(tweet);
-      // Append the tweet element to the tweets container
-      $('#tweets-container').append($tweet);
+      // Append the tweet element to the tweets container with newer tweets added at the top
+      $('#tweets-container').prepend($tweet);
     }
   };
 
