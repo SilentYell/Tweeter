@@ -7,7 +7,23 @@
 
 // Wait until the DOM is fully loaded
 $(document).ready(function() {
-
+  $('form').on('submit', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    const serializedData = $(this).serialize();
+    // Send the POST request
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: serializedData,
+    })
+      .done(() => {
+        console.log('Tweet submitted successfully!');
+      })
+      .fail(() => {
+        console.log('Error submitting tweet.');
+      });
+  });
   // Function to create a tweet element using a template literal
   const createTweetElement = function(tweet) {
     const $tweet = $(`
