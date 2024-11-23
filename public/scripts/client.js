@@ -11,7 +11,25 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     // Prevent the default form submission behavior
     event.preventDefault();
+
+    // Get the tweet content
+    const tweetContent = $('textarea[name="text"]').val().trim();
+    const maxTweetLength = 140;
+
+    // Validation: Check for empty or too-long tweet
+    if (!tweetContent) {
+      alert('Error: Your tweet cannot be empty!');
+      return; // Stop further execution
+    }
+
+    if (tweetContent.length > maxTweetLength) {
+      alert(`Your tweet exceeds the maximum of ${maxTweetLength} characters.`);
+      return; // Stop further execution
+    }
+
+    // Serialize form data for POST request
     const serializedData = $(this).serialize();
+
     // Send the POST request
     $.ajax({
       url: '/tweets',
@@ -20,6 +38,12 @@ $(document).ready(function() {
     })
       .done(() => {
         console.log('Tweet submitted successfully!');
+        // Reload tweets
+        loadTweets();
+        // Clear the textarea
+        $('textarea[name="text"]').val('');
+        // Reset the character counter
+        $('.counter').text(maxTweetLength);
       })
       .fail(() => {
         console.log('Error submitting tweet.');
@@ -74,7 +98,8 @@ $(document).ready(function() {
       method: 'GET',
       dataType: 'json',
       success: (tweets) => {
-        renderTweets(tweets); // Render fetched tweets
+        // Render fetched tweets
+        renderTweets(tweets);
       },
       error: (err) => {
         console.error('Failed to fetch tweets:', err);
