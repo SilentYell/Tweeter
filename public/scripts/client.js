@@ -7,24 +7,33 @@
 
 // Wait until the DOM is fully loaded
 $(document).ready(function() {
-  // Function to handle tweet form submission
-  $('form').on('submit', function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+  const maxTweetLength = 140;
 
-    // Get the tweet content
-    const tweetContent = $('textarea[name="text"]').val().trim();
-    const maxTweetLength = 140;
-
-    // Validation: Check for empty or too-long tweet
+  // Function to validate tweet content
+  const isTweetValid = (tweetContent) => {
     if (!tweetContent) {
       alert('Error: Your tweet cannot be empty!');
-      return; // Stop further execution
+      return false;
     }
-
     if (tweetContent.length > maxTweetLength) {
-      alert(`Your tweet exceeds the maximum of ${maxTweetLength} characters.`);
-      return; // Stop further execution
+      alert(`Error: Your tweet exceeds the maximum limit of ${maxTweetLength} characters.`);
+      return false;
+    }
+    return true;
+  };
+
+  // Function to handle tweet form submission
+  $('form').on('submit', function(event) {
+    // Prevent default form submission
+    event.preventDefault();
+
+    // Get and trim tweet content
+    const tweetContent = $('textarea[name="text"]').val().trim();
+
+    // Validate tweet content
+    if (!isTweetValid(tweetContent)) {
+      // Stop if validation fails
+      return;
     }
 
     // Serialize form data for POST request
