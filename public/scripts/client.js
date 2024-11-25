@@ -7,20 +7,6 @@
 
 // Wait until the DOM is fully loaded
 $(document).ready(function() {
-  const maxTweetLength = 140;
-
-  // Function to validate tweet content
-  const isTweetValid = (tweetContent) => {
-    if (!tweetContent) {
-      alert('Error: Your tweet cannot be empty!');
-      return false;
-    }
-    if (tweetContent.length > maxTweetLength) {
-      alert(`Error: Your tweet exceeds the maximum limit of ${maxTweetLength} characters.`);
-      return false;
-    }
-    return true;
-  };
 
   // Function to handle tweet form submission
   $('form').on('submit', function(event) {
@@ -28,14 +14,16 @@ $(document).ready(function() {
   
     // Hide any existing error messages
     const $errorMessage = $('.error-message');
-    $errorMessage.slideUp(); // Use slideUp for smooth hiding
+    // Use slideUp for smooth hiding
+    $errorMessage.slideUp();
   
     const serializedData = $(this).serialize();
     const tweetContent = $('textarea[name="text"]').val().trim();
   
     // Validation
     if (!tweetContent) {
-      $errorMessage.text('⚠️Tweet cannot be empty⚠️').slideDown(); // Show error message
+      // Show error message
+      $errorMessage.text('⚠️Tweet cannot be empty⚠️').slideDown();
       return;
     }
     if (tweetContent.length > 140) {

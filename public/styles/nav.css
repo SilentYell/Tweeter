@@ -41,6 +41,16 @@ body, html {
 
 .makeTweet i {
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 18px;
+  animation: bounce 2s infinite; /* 2-second duration, repeats infinitely */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
