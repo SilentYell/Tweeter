@@ -90,3 +90,8 @@
   transition: color 0.4s ease;
 }
 
+.tweet-content {
+  word-wrap: break-word; /* Break words that are too long */
+  overflow-wrap: break-word; /* Ensures compatibility with different browsers */
+  white-space: normal; /* Ensures that text will wrap onto the next line */
+}
