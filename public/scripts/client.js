@@ -83,6 +83,10 @@ $(document).ready(function() {
         </footer>
       </article>
     `);
+    
+    // Use .text() to escape user content
+    $tweet.find('.tweet-content').text(tweet.content.text);
+
     // Return the jQuery object representing the tweet element
     return $tweet;
   };
