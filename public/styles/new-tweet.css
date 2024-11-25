@@ -65,3 +65,14 @@ form button:hover {
 .counter.counter-red {
   color: red;
 }
+
+.error-message {
+  display: none;
+  color: white;
+  background-color: red;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -24,22 +24,26 @@ $(document).ready(function() {
 
   // Function to handle tweet form submission
   $('form').on('submit', function(event) {
-    // Prevent default form submission
-    event.preventDefault();
-
-    // Get and trim tweet content
+    event.preventDefault(); // Prevent the default form submission behavior
+  
+    // Hide any existing error messages
+    const $errorMessage = $('.error-message');
+    $errorMessage.slideUp(); // Use slideUp for smooth hiding
+  
+    const serializedData = $(this).serialize();
     const tweetContent = $('textarea[name="text"]').val().trim();
-
-    // Validate tweet content
-    if (!isTweetValid(tweetContent)) {
-      // Stop if validation fails
+  
+    // Validation
+    if (!tweetContent) {
+      $errorMessage.text('⚠️Tweet cannot be empty⚠️').slideDown(); // Show error message
       return;
     }
-
-    // Serialize form data for POST request
-    const serializedData = $(this).serialize();
-
-    // Send the POST request
+    if (tweetContent.length > 140) {
+      $errorMessage.text('⚠️Tweet exceeds the 140-character limit⚠️').slideDown(); // Show error message
+      return;
+    }
+  
+    // Proceed with submission if no validation errors
     $.ajax({
       url: '/tweets',
       method: 'POST',
@@ -47,12 +51,6 @@ $(document).ready(function() {
     })
       .done(() => {
         console.log('Tweet submitted successfully!');
-        // Reload tweets
-        loadTweets();
-        // Clear the textarea
-        $('textarea[name="text"]').val('');
-        // Reset the character counter
-        $('.counter').text(maxTweetLength);
       })
       .fail(() => {
         console.log('Error submitting tweet.');
