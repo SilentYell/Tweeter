@@ -45,10 +45,6 @@ main.container {
   /* Align header on the left */
   .page-header {
     width: 30%;
-    height: auto;
-    margin: 0;
-    padding-top: 0;
-    position: relative;
   }
   
   .page-header img:first-of-type {
@@ -63,8 +59,72 @@ main.container {
   .content-wrapper {
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
 }
+
+/* Tablet layout adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  main.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .page-header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .page-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-tweet {
+    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .tweet-feed {
+    width: 90%;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 374px) {
+  body {
+    font-size: 22px;
+  }
+
+  .page-header img {
+    width: 80%;
+    max-width: 150px;
+    margin: 0 auto;
+  }
+
+  .page-header h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .new-tweet textarea {
+    font-size: 1rem;
+  }
+
+  .content-wrapper {
+    padding: 10px;
+  }
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
