@@ -37,8 +37,14 @@ $(document).ready(function() {
       method: 'POST',
       data: serializedData,
     })
-      .done(() => {
+      .done((newTweet) => {
         console.log('Tweet submitted successfully!');
+        // Clear the form and reset character counter
+        $('textarea[name="text"]').val('');
+        $('.counter').text(140);
+        const $tweet = createTweetElement(newTweet);
+        // Add the new tweet to the top of the feed
+        $('#tweets-container').prepend($tweet);
       })
       .fail(() => {
         console.log('Error submitting tweet.');
