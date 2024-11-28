@@ -42,35 +42,37 @@
       </div>
     </nav>
 
-    <header class="page-header">
-      <!-- Avatar and background image -->
-      <div>
-        <img src="/images/profile-hex.png" alt="Profile Avatar">
-      </div>
-      <!-- Name below the avatar -->
-      <h2><b>Nik</b> Hixson</h2>
-    </header>    
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div class="error-message"></div>
-        <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <!-- Tweet feed of all recent tweets -->
-      <section class="tweet-feed">
-        <!-- Container for dynamically loaded tweets -->
-        <div id="tweets-container">
-          <!-- Tweets will be appended here by JavaScript -->
+    <div class="content-wrapper">
+      <header class="page-header">
+        <!-- Avatar and background image -->
+        <div>
+          <img src="/images/profile-hex.png" alt="Profile Avatar">
         </div>
-      </section>
-    </main>
+        <!-- Name below the avatar -->
+        <h2><b>Nik</b> Hixson</h2>
+      </header>    
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class="error-message"></div>
+          <h2>Compose Tweet</h2>
+          <form action="/tweets" method="POST">
+            <textarea name="text" placeholder="What are you humming about?"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <!-- Tweet feed of all recent tweets -->
+        <section class="tweet-feed">
+          <!-- Container for dynamically loaded tweets -->
+          <div id="tweets-container">
+            <!-- Tweets will be appended here by JavaScript -->
+          </div>
+        </section>
+      </main>
+    </div>
     <script src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>

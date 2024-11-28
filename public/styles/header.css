@@ -1,4 +1,4 @@
-/* Header Styling */
+/* Header styling */
 .page-header {
   background-color: #F28C28;
   background-image: url("/images/light-paper-fibers.png");
@@ -8,19 +8,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 400px;
   text-align: center;
   color: #FFFFFF;
+  height: 400px;
+  position: relative;
 }
 
-/* Avatar and background image */
-.page-header img:first-of-type {
+.page-header img {
   width: 250px;
   height: 250px;
   object-fit: cover;
 }
 
-/* Name below the avatar */
 .page-header h2 {
   margin-top: 40px;
   font-family: "Source Sans 3", sans-serif;
