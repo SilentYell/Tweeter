@@ -8,6 +8,18 @@
 // Wait until the DOM is fully loaded
 $(document).ready(function() {
 
+  // Add focus and blur behavior for the placeholder
+  const $textarea = $('textarea[name="text"]');
+  $textarea.on('focus', function () {
+    $(this).attr('placeholder', ''); // Clear the placeholder
+  });
+
+  $textarea.on('blur', function () {
+    if ($(this).val().trim() === '') {
+      $(this).attr('placeholder', 'What\'s happening?'); // Restore default placeholder
+    }
+  });
+
   // Function to handle tweet form submission
   $('form').on('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
