@@ -25,6 +25,7 @@ body, html {
   font-size: 40px;
   font-family: Bungee, sans-serif;
   margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 
 /* "Write a new tweet" section */
@@ -34,10 +35,7 @@ body, html {
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
   margin-right: 1.5em;
-}
-
-.makeTweet span {
-  color: #FFFFFF;
+  margin-left: 1.5em;
 }
 
 .makeTweet i {

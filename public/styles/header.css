@@ -1,5 +1,6 @@
 /* Header styling */
 .page-header {
+  width: 100%;
   background-color: #F28C28;
   background-image: url("/images/light-paper-fibers.png");
   background-size: cover;
@@ -12,6 +13,7 @@
   color: #FFFFFF;
   height: 400px;
   position: relative;
+  font-size: 36px;
 }
 
 .page-header img {
@@ -24,4 +26,5 @@
   margin-top: 40px;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
+  font-size: 36px;
 }
